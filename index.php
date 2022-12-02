@@ -14,9 +14,9 @@
                 <li><a href="#">Karmy Suche</a></li>
                 <li><a href="#">Karmy Mokre</a></li>
                 <li><a href="#">Zabawki</a></li>
-                <li class="right"><a href="#">Koszyk</a></li>
-                <li class="right"><a href="#">Rejestracja</a></li>
-                <li class="right"><a href="#">Zaloguj się</a></li>       
+                <li class="right"><a href="">Koszyk</a></li>
+                <li class="right"><a href="register.php">Rejestracja</a></li>
+                <li class="right"><a href="login.php">Zaloguj się</a></li>       
             </ul>
 
         <div class="container">

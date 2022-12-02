@@ -4,8 +4,6 @@ body
     font-family: Cambria;
 }
 
-/*HEADER*/
-
 ul.topnav 
 {
     list-style-type: none;
@@ -38,7 +36,6 @@ ul.topnav li.right {float: right;}
     ul.topnav li {float: none;}
 }
 
-/*CONTENT*/
 .container
 {
     margin: auto;
