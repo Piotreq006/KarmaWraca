@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 04 Lis 2022, 11:07
+-- Czas generowania: 02 Gru 2022, 11:41
 -- Wersja serwera: 10.4.24-MariaDB
 -- Wersja PHP: 8.1.6
 
@@ -39,16 +39,24 @@ CREATE TABLE `produkty` (
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `uzytkownicy`
+-- Struktura tabeli dla tabeli `users`
 --
 
-CREATE TABLE `uzytkownicy` (
-  `IdUzytkownika` int(11) NOT NULL,
-  `Imię` varchar(255) DEFAULT NULL,
-  `Nazwisko` varchar(255) DEFAULT NULL,
-  `Email` varchar(255) DEFAULT NULL,
-  `Haslo` varchar(255) DEFAULT NULL
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `nazwa_uzytkownika` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `users`
+--
+
+INSERT INTO `users` (`id`, `nazwa_uzytkownika`, `password`, `created_at`) VALUES
+(1, 'Piotr', '$2y$10$9O9YgWKZ1z2WKSzopkNLT.6ayuth3gQnfUt17CSgqc5teJHX5fA/m', '2022-12-02 11:02:55'),
+(2, '43r343r4', '$2y$10$bL4YRIOHHn0DACWknt1kJeuW1rvE1M4PWGsiYwIqNqTPVidRQOKEi', '2022-12-02 11:23:29'),
+(3, 'Paweł', '$2y$10$MgiW5uO3aq8iIqB34jtiy.P/OvE8/b.E9HhOo57A/51VRg4r.V1Ry', '2022-12-02 11:38:37');
 
 -- --------------------------------------------------------
 
@@ -68,10 +76,11 @@ CREATE TABLE `zamowienia` (
 --
 
 --
--- Indeksy dla tabeli `uzytkownicy`
+-- Indeksy dla tabeli `users`
 --
-ALTER TABLE `uzytkownicy`
-  ADD UNIQUE KEY `IdUzytkownika` (`IdUzytkownika`);
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nazwa_uzytkownika` (`nazwa_uzytkownika`);
 
 --
 -- Indeksy dla tabeli `zamowienia`
@@ -84,10 +93,10 @@ ALTER TABLE `zamowienia`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `uzytkownicy`
+-- AUTO_INCREMENT dla tabeli `users`
 --
-ALTER TABLE `uzytkownicy`
-  MODIFY `IdUzytkownika` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `zamowienia`
